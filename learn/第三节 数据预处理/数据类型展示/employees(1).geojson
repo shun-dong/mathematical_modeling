@@ -1,0 +1,1 @@
+{"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"Alice","age":30,"salary":70000},"geometry":{"type":"Point","coordinates":[-100,40]}},{"type":"Feature","properties":{"name":"Bob","age":25,"salary":50000},"geometry":{"type":"Point","coordinates":[-120,35]}}]}

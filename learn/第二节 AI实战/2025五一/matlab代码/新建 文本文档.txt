@@ -1,0 +1,6 @@
+
+
+
+正态分布检验方式：
+    Shapiro–Wilk test 推荐样本量为7~2000，Origion中允许样本大小为3~5000，当样本量超过5000时不再适用
+    大样本使用  K-S-L test 或 D'Agostino's K-squared test

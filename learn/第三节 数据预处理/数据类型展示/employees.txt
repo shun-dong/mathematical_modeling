@@ -1,0 +1,14 @@
+Name: Alice
+Age: 30
+Country: USA
+Salary: 70000
+
+Name: Bob
+Age: 25
+Country: Canada
+Salary: 50000
+
+Name: Charlie
+Age: 35
+Country: UK
+Salary: 80000

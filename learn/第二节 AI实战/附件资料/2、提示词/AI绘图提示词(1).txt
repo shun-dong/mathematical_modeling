@@ -1,0 +1,514 @@
+构图关键词
+三分法 Rule of Thirds
+黄金分割 Golden Ratio
+不对称 Asymmetry
+对称 Symmetry
+引导线 Leading Lines
+构框 Framing
+孤立 lsolation
+深度 Depth
+对比 Contrast
+纹理 Texture
+中心构图 center the composition
+S形构图 S-shaped composition
+横向构图 Horizontal composition
+对称身体 Symmetrical body
+对称面孔 Symmetrical face
+体积光 volumetric light/Volume Method
+对称构图 Symmetrical composition
+非对称构图 Asymmetrical composition
+三分法构图 Rule of Thirds composition
+黄金分割构图 Golden Ratio composition
+对角线构图 Diagonal composition
+画框构图 Framing composition
+并列构图 Juxtaposition composition
+动态对称构图 Dynamic symmetrycomposition
+汇聚线条构图 Converging linescomposition
+饱和构图 Saturated composition
+消失点构图 Vanishing point composition
+非线性构图 Nonlinear composition
+视角构图 Point of view composition
+剪影构图 Cut out composition
+焦点构图 Focal point composition
+重复构图 Repetition composition
+对比构图 Contrast composition
+重叠构图 Overlapping composition
+孤立构图 lsolation composition
+径向构图 Radial composition
+拼贴构图 Collage composition
+分割互补构图 split complementarycomposition
+布景构图 Mise-en-scene composition
+负空问构图 Negative space composition
+鸟瞰 Bird view仰视 Up view头部特写 Headshot
+宽景 Wide view
+俯视 Top view
+正面 Front view
+超广角 Utrawide shot
+极端特写 Extreme closeup
+景观 An expansive view of
+微距 Macro shot
+
+光线关键词
+Bright 明亮的光线
+Top light 顶光
+Rim light 轮廓光
+Morning light 晨光
+Sun light 太阳光
+Golden hour light 黄金时段光
+bright 明亮的
+Dreamy haze 梦幻雾气
+Misty foggy 雾气朦胧
+BBrutal 残酷的，破碎的
+dramatic contrast 强烈对比的
+dramatic light 强光
+volumetric lighting 层次光
+Octane render OC 渲染效果
+unreal engine 5 UE5 效果
+Cinematic light 电影光
+Volumetric light 立体光
+Studio light 影棚光
+Reflection effect 反射
+soft lights 柔光
+Glow effect 发光
+Romantic canclelight 浪漫烛光
+Electric fash 电光闪烁
+cinematic lighting 电影灯光
+Shadow effect 阴影效果
+Natural light 自然光
+Raking light 侧光
+Edge light 边缘光
+Back light 逆光
+Hard light 硬光
+Rembrandt Lighting 伦勃朗照明
+Split Lighting 分体照明
+front lighting 前灯
+Vibrant color 鲜艳色彩
+Rembrandt light伦勃朗光
+reflection light 反光
+mapping light 映射光
+mood lighting 情调光
+atmospheric lighting 气氛照明
+volumetric lighting 体积照明
+mood lighting 情绪照明
+soft light 柔软的光线
+Etherealmist 仙气缭绕
+Warm glow 温暖光辉
+Moody atmosphere 忧郁氛围
+Soft moonlight 柔和月光
+rays of shimmering light 微光
+Crepuscular Rax 黄昏射线
+outer space view 外太空观
+Intense backlight 强光逆光
+Shimmering light 闪光灯光
+bisexual lighting 双性照明
+Soft illuminaotion 柔和的照明
+Projection effect 投影
+fuorescent lighting 荧光灯
+beautifullighting 好看的灯光
+yrayvray 渲染效果
+Dramatic lighting 戏剧灯光
+Cold light 冷光
+Warm light 暖光
+hard lighting 强光
+Dramatic light 戏剧光
+Color light 色光
+Cyberpunk light 赛博朋克光
+Stark shadows 明暗分明
+Moody darkness 黑暗氛围
+Harsh contrast 高对比度
+Back lighting 背光照明
+clean background trending 千净的背景趋势
+Bright highlights 明亮高光
+Serene calm 安静恬淡
+rim lights 边缘灯
+winkling stars 闪耀星空
+Soft candlelight 柔和烛光
+global illuminations 全局照明
+
+画面品质关键词
+高细节 High Detail
+高分辨率 High Resolution
+8k 流畅 8k Smooth
+16K分辦率 16KResolution
+超清晰 Super Clarity
+超高分辨率 Ultra-high Resolution
+超高清晰度 Utra-high Clarity
+超高清画面 Ultra HD picture
+徕卡镜头 leica lens
+高品质 Hyper Quality
+全高清 FHD,1030P.2K.4K.BK
+8K分辨率 8K Resolution
+超高清 Ultra HD
+高清 High Definition
+超高清 HDR UItra HD HDR
+超高清晰 Ultra-high Definition摄影感 photography详细细节 detailed
+
+画面渲染品质关键词
+Arnold 渲染器 Arnold Renderer
+Redshift 渲染器 Redshift Renderer
+C4D 渲染器 C4D Renderer
+Mental Ray 渲染器 Mental Ray
+虚幻引擎 Unreal Engine
+渲染 Maxon Cinema 4D
+全局光照 Globallumination
+亚像素采样 Subpixel Sampling
+真实感 Quixel Megascans Render
+模拟 UE 渲染场景 Unreal engine 5
+3D 渲染 3D rendering
+环境光遮蔽 Ambient Occlusion
+Monte Carlo 渲染 Monte Carlo Rendering
+环境贴图 Environment Mapping
+Corona 渲染器 Corona Renderer
+抗锯齿 Anti-aliasing(AA)
+V-Ray 渲染器 V-Ray Renderer
+0ctane 渲染器Octane Renderer
+Blender渲染器Blender Renderer
+被蓝渲染器 Indigo Renderer
+0C 渲染 Octane render
+建筑渲染 Architectural visualisation
+着色器 Shader
+室内渣染 Corona Render
+v射线 V-Ray
+虚拟引擎 Virtual engine
+超真实 Hyperrealism
+物理渲染 Physically Based Rendering
+贴图映射 Texture Mapping
+FStorm 渲染器 FStorm Renderer
+景深 Depth of Field (DOF)
+体积渲染 volume rendering
+
+细节关键词
+平整的 Flat
+线条流畅的 sleek
+柔和的 Soft
+线条优美的 Graceful
+有机的 Organic
+细微的 Subtle
+细长的 Thin
+线条流畅且柔和的 Gentle
+线条弯曲但流畅的 Sinuous
+线条优美且清晰的 well-definec
+有层次感的 Lavered
+线条明显而突出的 Bold
+具有雕刻感的 Carved
+光滑的 Smooth
+细腻的 Delicate
+线条优美且流畅的 Elegant
+曲线优美的 Curvaceous
+不规则的 lrregullar
+锋利的 Sharp
+充满动感的 Dynamic
+精密的 Precise
+流线型的 Streamlined
+弯曲的 Curved
+多样化的 Varied
+光洁的 Polished
+纤细的 Slender
+线条细致的 Intricate
+曲线细腻的 Delicately curved线条优美且精细的 Exquisite
+有纹理的 Textured
+纹路自然的 Organic pattern具有浮雕感的 Embossed超细节 epic detail
+清晰的 clear精细的 Fine
+线条柔和且平滑的 Soothing
+粗糙的 Rough
+粗大的 Bulky
+多棱角的 Angullar
+统一的 Uniform
+
+场景关键词
+galaxy 银河
+nebula 星云
+overgrown nature 杂草丛生的
+Futuristic metropolis 未来都市
+Magical castle 魔法城堡
+Industrial cityscape 工业城市
+Floating city 浮空城市
+Futuristic laboratory 未来实验室
+Robot factory机器人工厂
+Mystic mountain 神秘山脉
+Cyberpunk city 褰博朋克城市
+Haunted forest 鬼屋森林
+Surreallandscape 超现实主义风景
+Lunar landscape 月球地貌
+Starry night sky 星空夜景
+Steampunk citvscape 蒸汽朋克城市
+Magical forest 魔法森林
+deserted city buildings 废弃城市建筑群
+street scenery 街景
+universe 1 cosmos 宇宙
+In the morning mist 在晨雳中
+Cyberpunk street 蹇博朋克街道
+Ancient ruins 古代遗迹
+Lunar colony 月球殖民地
+Steam-powered machinery 蒸汽动力机械
+Abandoned spaceship 废弃宇宙飞船
+classroom 教室
+forest 森林
+ruins 废墟
+Alien planet 外星球
+Neon City 霓虹城市
+Steampunk Factory 蒸汽朋克工厂
+Mushroom Forest 蘑菇森林
+Enchanted Garden 迷人花园Magical Kingdom 魔法王国Dark Forest 黑暗森林Lost ruins 迷失废墟Tropical paradise 热带天堂Post-apocalyptic wasteland 后启示录荒野Starry Night 星空夜景Digital Universe 数字宇宙Spaceship宇宙飞船Mystical Forest 神秘森林Crvstal palace 水晶宫殿Sunken Shipwreck沉船遗迹post apocalyptic 后启示录、末日后Mythical world 神活世界Magical Forest 魔幻森林Volcanic Eruption 火山喷发Giant Machines 巨大机器Star Wars 星球大战Enchanted Forest 魔法森林
+dungeon 黑暗地牢
+mad max 疯狂麦斯沙地风格Underwater world 水下世界Enchanted garden 魔法花园Dreamy clouds 梦幻云彩Gothic cathedral 哥特式大教堂
+Red planet 火星
+Time travel cityscape 时光穿越城市Cyberjungle 赛博朋克丛林
+lce cave 冰洞穴
+Dvstopian future 反乌托邦未来Extraterrestrial landscape 外星地貌Medieval castle 中世纪城堡
+Crystal cave 水晶洞穴
+Apocalvotic city 世界末日城市Fantasy village 奇幻村庄
+city 城市
+near future city 近未来都市Alchemy Laboratory 嫁金室rain 兩天
+fullof sunlight 充满阳光Mystic temple 神秘寺店Desert oasis 沙漠绿洲whimsically 异想天开tantasy 幻想Mysterious Tomb 神秘古墓bedroom 卧室
+Neon city 霓虹城市Underworld 冥界
+Futuristic park 未来公园Giant Architecture 巨大建筑Rainy City 兩天城市Fairy Tale Castle 童话城堡Post-Apocalyptic World 后启示录世界Dystopian Landscape 反乌托邦景观Lunar Landscape 月球景观lce kingdom 冰雪王国
+Aurora Borealis 极光北极Cyberpunk Alley 暴走机甲小巷Gothic Cathedral 哥特式大教堂Surreal Dreamland 超现实梦境Cff 悬崖峭壁
+Sky island 天空岛屿
+Desolate Desert 荒漠孤烟Cactus Desert 仙人掌沙漠Castle in the Sky 天空之城
+Outer Space 外太空Ancient Temple 古代神庙Romantic Town 浪漫小鎮Apocalypse Ruins 末日废墟Mars Exploration 火星探险Technological City 科技城市
+
+人物风格
+神秘幻想 Mystic tantasy
+珍珠奶茶风格 Pear Milk Tea Style
+克芳德莫奈 Claude Monet
+奈方山水画 Tradition Chinese Ink Painting
+水墨插圈 inkilustration
+传统文化 Traditional culture
+日本漫画风格Japanese comics/ manga
+日本海报风格 poster otjapanese design
+副岛成记 Soeiima Shigenori
+吉卜力风格 Ghibli Studio
+漫画 manga
+廣幻现实 Magic realism
+二次元
+洛丽塔风格 Lolita
+印象派lmpressionism
+儿童插画 children's ilustration
+手図格 Hand-drawn style
+像素风 Pixel art
+涂鸦 doodle
+梦工厂动西风格 CGSociety
+皮克期 Pixar
+电影风格 Hollywood-style
+电影摄影风格 Cinematography style
+剪辑 flm photography
+达芬奇 Leonardo Da Vinci
+廣幻现实主义风格 Magic Realism Style
+真实的 realistic
+真实感 photoreal
+超写实主义 hyperrealism
+黑自 black and white
+点彩派 pointillism
+绗缝艺术 quilted art
+水墨风格 lnk Wash Painting Style
+紙本彩色墨水 color ink on paper
+浮世絵Japanese Ukiyo-e
+日本动画片 Anime
+宫崎骏风格 Miyazaki Hayao style
+山田章博 Yamada Akihiro
+Jolo 的奇妙冒险 jojo's bizarre adventure
+日本风格 Japanese-style
+迪士尼风 Disney-style
+新海诚 Makoto Shinkai
+童话故事书插图风格 stock illustration style
+抽象表现主义 Abstract Ant
+立体派Cubism
+卡通 Cartoon
+童话风格 Fairy tale style
+伏尼契手稿 Voynich manuscript
+梦工厂黜山 Dreamworks Pictures
+黑白电影时期 Pulp Noir
+巴洛克时期 Baroque
+微缩模型电影风格 Miniature movie style
+法国艺术 french art
+梵高 Vincent Van Gogh
+游戏风格 Game-style
+3D 风格 3D
+星际战甲 Warframe
+电影般的 cinematic
+
+色调关键词
+红 red
+黑 black
+黄 yellow
+紫 purple
+棕 brown
+白 white
+绿 green
+蓝 blue
+灰 gray
+青 avan
+橙 orange
+黑色背景居中 black background centered
+红色和黑色调 red and black tones
+金色和银色调 Gold and silver tones
+亮丽橙色系 Bright Orange
+自然绿色系 Natural Green
+稳重蓝色系 Steady Blue
+经典红黑白色系 Classic Red Black andWhite
+珊瑚橙色系 Coral Orange
+紫罗兰紫色系 Violet Purple
+水晶藍色系 Crystal Blue
+糖果色系 Candy
+紫罗兰色系 Lavender
+玫瑰金色系 Rose Gold
+酒紅色系 Burgundy
+士耳其藍色系 Turquoise
+枫叶红色系 Maple Red
+雪山蓝色系 Mountain Blue
+马卡龙色Macarons
+钛金属色系 Titanium
+黑白灰色系 Black and White
+温暖棕色系 Warm Brown
+发光 shine
+星闪 star flash
+白色和绿色调 white and green tones
+黄色和黑色调 yellow and black tones
+霓虹色调 neon shades
+象牙白色系 lory White
+奢华金色系 Luxurious Gold
+丹宁蓝色系 Denim Blue
+巨无霸色系 Whopper
+秋日棕色系 Autumn Brown
+柠檬黄色系 Lemon Yellow
+时尚灰色系 Fashionable Gray
+珊瑚色系 Coral
+绿野仙踪色系 Emerald
+浅藍色系 Sky Blue
+日暮色系 Sunset Gradient
+薄荷绿色系 Mint Green
+波普艺术 Pop Art
+镭射糖果纸色 laser candy paper color
+莫兰迪色系 Muted Tones
+鲜果色系 Fresh Fruits
+极简黑白色系 Minimalist Black and White
+柔和粉色系 Soft Pink
+圣光 holy light
+荧光 fuorescence
+反射透明彩虹色 reflections transparentiridescent colors
+
+
+视角关键词
+自由视角 Free camera
+俯视视角 Top-down perspective
+短距离视角 Close-up view
+随意视角 Arbitrary view
+内视镜视角 Endoscopic view
+鱼眼视角 Fisheye lens
+反转视角 Reverse angle
+中中特写 Medium Close-Up(Mcu)
+中暴 Medium Long Shot(MLS)
+过肩景 Over the Shoulder Shot
+近距离景 Tight Shot
+Two Shot(2S), Three Shot(35), Group ShotGS)
+风景照 Bokeh
+前景 Background
+胸部以上 Chest Shot(MCU)
+人在远方 Extra Long Shot(ELS)
+脸部特写 Face Shot (VCu)
+半身像 bust portrait
+鸟瞰图A Bird&apos;s-Eye View, Aerial View
+卫星视图 Satelite View
+前视、侧视、后视图 Front, Side,Rear View
+极端特写视图 Extreme Closeup View
+第-人称视角 First-Person View
+全景视角 Panoramic view
+低角度视角 Low Angle Shot
+常规视角 Eye-level
+交错视角 Dutch
+固定视角 Fixed camera
+侧面视角 Side-scrolling perspective
+远距离视角 Long-shot view
+跟随视角 Follow camera
+肩膀视角 Over the shoulder
+微距视角 Macro lens
+特写 close-Up(CU)
+中景 Medium Shot(Ms)
+远景 Long Shot(LS)
+松散景 Loose Shot
+两景(2S)、三景(3S)、
+群景(GS) Scenery Shot
+背景虚化 Foreground
+背景 Full Length Shot(FLS)
+膝盖以上 Knee Shot(Ks)
+头部以上 Big Close-Up(BCu)
+顶视園 Top View
+大特写 Detail Shot(ECU)
+倾斜移位 Tilt-Shift
+底视图 Bottom View
+产品视图 Product View
+仰视 Look Up
+等等距视图 lsometric View
+逆光摄影风格 Backlight style
+俯拍视角 Overhead
+鸟瞰视角 Bird&apos;s-eye
+运动视角 Dynamic
+
+质感关键词
+金属质感 Metallic texture
+珠光质感 Pearl luster textur
+皮革质感 Leather texture
+水晶质感 Crystal texture
+亚光质感 Matte texture
+绸缎质感 Silk texture
+水波纹质感 Water wave tex
+竹子质感 Bamboo texture
+瓷器 Porcelain
+珐琅 Enamel
+金属漆质感 Metallic paint te
+雕刻质感 Carved texture
+夭鹅绒 Velvet
+沙质 Sandy texture
+古铜质感 Antiaue bronze te:
+油漆质感 Paint texture
+粘土质感 Clay texture
+腐朽衰败的 Decaved
+木头 wood
+棉花 Cotton
+石质 Stone texture
+玻璃质感 Glass texture
+棉质 Cotton texture
+塑料质感 Plastic texture
+珍珠质感 pearl texture
+毛绒质感 Fluffy texture
+石墨质感 Graphite texture
+薄纸巾 Tissue paper
+青瓷 Celadon
+纹理质感 Texture
+皮毛质感 Fur texture
+蕾丝 Lace
+砂岩 Sandstone
+陶瓷质感 Ceramic texture
+砖石质感 Brick texture
+纱绸质感 Gauze texture
+菌丝 Mycelium
+骨骼状 Skeletal
+玻璃 Glass
+亚麻布 Linen
+
+
+
+
+图生图
+whole body, A super cute girl IP, Chinese ancient style, Hanfu, big eyes, looking at viewer, open hands, dreamy, excited, Bubble decoration, Popmart Blind Box, IP design, Pixar trend, 8K, details super delicate, resin, oc rendering of the best quality, soft pastel gradients, white background --ar 2:3
+
+图像比例设置
+Dark and gloomy, a full body photo of Heath Ledger as the joker, the flames behind him, lifelike texture, dynamic composition, Fujifilm XT2, 85mm F1. 2, 1/ 80 shutter speed, ( bokeh) , high contrast, cinematic, movie still, 8K --ar 9:16
+
+混沌
+The Beautiful Girl of Japanese Animation，Behind is a beautiful garden --c 0
+
+取消
+A chinese cyberpunk city but with fantasy instead of technology, paper lantern lights, wooden buildings, flying ships
+A chinese cyberpunk city but with fantasy instead of technology, paper lantern lights, wooden buildings, flying ships --no red
+
+
+chatgpt+midjourney
+帮我把“日照香炉生紫烟，遥看瀑布挂前川。飞流直下三千尺，疑是银河落九天”。把这首诗的景色用英文单词或短语来描述，不要用长句，不要直接翻译，要描绘出优美的景色。至少100词。
+参考下面的midjourney提示词的设计：sunrise wallpaper images collection | pictures, photos, icons, backgrounds, in the style of tropical symbolism, violet and black, photo-realistic, sense of quiet contemplation, afro-caribbean influence, romantic chiaroscuro, yankeecore 
+
+
+
+
+

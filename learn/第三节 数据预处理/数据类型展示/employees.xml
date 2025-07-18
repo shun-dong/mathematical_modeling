@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<employees>
+   <employee>
+      <name>Alice</name>
+      <age>30</age>
+      <country>USA</country>
+      <salary>70000</salary>
+   </employee>
+   <employee>
+      <name>Bob</name>
+      <age>25</age>
+      <country>Canada</country>
+      <salary>50000</salary>
+   </employee>
+   <employee>
+      <name>Charlie</name>
+      <age>35</age>
+      <country>UK</country>
+      <salary>80000</salary>
+   </employee>
+</employees>
