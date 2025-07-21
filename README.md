@@ -1,18 +1,33 @@
 ---
-project: "mathematical modeling"
-tags: []
+project: mathematical modeling
+tags: 
+aliases:
+  - 数学建模
 ---
+
 
 mathematical modeling
 ├── [README.md](README.md)
 ├── [.git/](.git)
+├── [.gitattributes](.gitattributes)
+├── [.gitmodules](.gitmodules)
 ├── [demo/](demo)
 └── [learn/](learn)
 
 # log
+- ==数学==：先保证理论模型上对了再寻求工程上优化
+- [ ] 是表述问题还是AI能力问题
+
 - [x] 资料 ✅ 2025-07-06
 - [x] Matlab环境 🔼 ✅ 2025-07-06
 - [ ] 自己做一个练手, 数据：Kaggle: Your Home for Data Science🔼 
+	- [ ] CUMCM2021-A
+		- [/] Q2：审阅代码原理
+		- [ ] 实际上顶点不在轴上：选择node作为顶点
+		- [ ] 一开始就用mask +scipy⏫ 
+		- [ ] 启发式算法⏫ 
+	- [ ] 看看其他类型的题目
+- [ ] 准备材料⏫ 
 - [ ] 合作一个磨合🔼 
 - [ ] 复习高中概率知识，预习概率论🔼 
 # 分工
@@ -41,33 +56,53 @@ mathematical modeling
 
 标注AI生成内容方便后续调整
 ## 思路
-我是一名==数学建模指导老师==，可以根据我给出的题目，写出详细的解题思路嘛
+```prompt
+我是一名==数学建模指导老师==，可以根据我给出的题目，写出详细的解题思路
+```
 
+```prompt
 对于问题分析，首先简要地描述该问题+该问题求解思路+该问题求解中可能使用的模型+进一步可以改进的创新点，然后以表格的形式进行总结：题号|题目|涉及专业|涉及模型|涉及算法|数据处理方式|综合难度（5分制）
+```
 
 	
 ## 问题重述&分析
-基于该背景写出800字的背景描述
-请基于该背景写出800字的研究现状
+（跳过了摘要+关键词）
 
-请==重新描述==这几个问题以达到降重的目的
+```prompt
+基于该背景写出800字的背景描述
+```
+
+```prompt
+请==重新描述==题目这几个问题以达到降重的目的
+```
+
+```prompt
+请基于该背景写出800字的研究现状
+```
 文献综述：需要用原版AI的深度搜索，同时需要验证
 
-（跳过了模型的假设与符号说明）
-
+（跳过了问题分析、模型的假设与符号说明）
 ## 问题的模型建立与求解
-(引用任务)对于这一任务, 写出MATLAB代码
-根据我写出的代码写出详细的使用文字+==公式==的形式进行描述，不用分条，一段一段地进行描述，描述中不要再出现函数变量名称使用文字或者公式替代，可视化部分不需要描述
-- [ ] 伪代码, 算法示意图
+```prompt
+(引用任务)对于这一任务, 写出python代码
+```
 
+```prompt
+根据我写出的代码写出详细的使用文字+==公式==的形式进行描述，不用分条，一段一段地进行描述，描述中不要再出现函数变量名称使用文字或者公式替代，可视化部分不需要描述
+```
+- [ ] 伪代码, 算法示意图
+```prompt
 (对于生成的图)请对该可视化结果进行详细的文字描述，不用分条展示，控制在200字左右
+```
 ## 摘要+关键词
+```prompt
 请根据我的求解思路，写出模型的摘要，要求：
 1、第一段 两句话 第一句为背景描述、第二句为研究问题
 2、第二三四五六段，分别为数据处理、问题一二三四五进行描述。
 3、最后一段为总阶段。
 在描述问题中，需要首先描述一下研究的问题具体是什么，具体求解过程、求解出的结果。最终如果有创新点、特色可以在最后一段进行说明
 再写出关键词，要求：关键词主要为三个方向，4-5个词，分别为研究问题、使用模型、求解算法
+```
 
 *AI写完再加一些数据*
 
@@ -85,11 +120,16 @@ mathematical modeling
 请基于研究内容，写出模型推广，不用分条
 
 ## 去AI味润色
+```prompt
 Replace all transition words and conjunctions inthe sentences with the most basic and commonlyused ones.Use simple expressions,avoidingcomplex vocabulary.Ensure the logicalconnections between sentences are clear.Deletesthe conclusion part in the end of the text.
 将所有的句子过渡词和连接词替换为最基础、最常用的词语。 尽量使用简单、直接的表达方式，避免使用复杂或生僻的词汇，确保句子之间的逻辑关系清晰，删掉文末总结的部分。
+```
 
+
+```prompt
 Rewrite the above text. The writing style shouldbalance between formal academic writing andconversational expression.Ensure that everysentence has a clear subject. Avoid using long orcomplex sentences.Use short sentences as muchas possible.
 将以上文字重新修改，写作风格界于书面学术写作和口语描述之间，保证所有的句子都要有主语不要用复杂的长难句，尽量用短句输出。替换掉所有的非日常词汇。
+```
 
 # 数据预处理
 
@@ -130,6 +170,7 @@ WPS->SPSSPRO
 展示处理完的数据
 # 优化模型
 目标函数, 约束条件, 决策变量
+- [ ] 工作流
 ## 常见问题
 - 运输问题
 - 旅行商问题
@@ -174,8 +215,9 @@ WPS->SPSSPRO
 ## 回归问题
 ### 模型
 直接导入matlab，回归学习，训练所有模型，导出结果表作为支撑，导出最好的模型
-- [ ] 回归问题原理🔼 
-- [ ] 交叉验证：大型5折，小型10折🔼 
+- [/] 回归问题原理 🔼
+交叉验证：**K折交叉验证**(K-fold cross validation)指的是把训练数据_D_ 分为 K份，用其中的(K-1)份训练模型，把剩余的1份数据用于评估模型的质量。将这个过程在K份数据上依次循环，并对得到的K个评估结果进行合并
+一般大型5折，小型10折
 
 ### 评价准则
  $$R^2 = 1 - \frac{\sum (y_i - \hat{y}_i)^2}{\sum (y_i - \bar{y})^2}$$
@@ -215,14 +257,17 @@ ROC曲线图$\xrightarrow{面积}$AUC值
 - 基于深度学习的时间序列模型
 
 使用:
+```prompt
 AI:我有XX数据存储在XX, 自变量在XX列, 因变量在XX列, 我想构建LSTM模型, 给出python代码
+```
 - [ ] SPSSPRO
 - [ ] 工具箱[LSTM深度学习预测时间序列](https:/space.bilibili.com/52614961/channel/collectiondetail?sid=1362425&spm_id_from=333.788.0.0 "LSTM深度学习预测时间序列")
 
 # 评价模型
 
 ## 主成分分析法
-降维
+降维，用于指标较多情况
+同时避免原指标间具有相关性
 ## 熵权法
 - 标准化数据
 - 计算指标的比重（信息熵）
@@ -231,9 +276,7 @@ AI:我有XX数据存储在XX, 自变量在XX列, 因变量在XX列, 我想构建
 客观性强：熵权法不依赖于决策者的主观判断，通过客观的数学计算自动分配权重。 适用于多指标问题：可广泛应用于多指标决策问题，如环境评估、金融分析、社会调查等。 信息利用充分：通过计算熵值，能够充分挖掘各个指标之间的信息差异
 - [x] 信息熵 🔼 ✅ 2025-07-13
 
-## +TOPSIS
-- [ ] 综合评价之熵值法+TOPSIS(加权组合评价)_熵权topsis法计算步骤-CSDN博客
-
+## TOPSIS
 1. **标准化指标**  ：转为极大值
    - 极小型指标：需要转化为极大型 $X'_{ij} = \max(X_{ij}) - X_{ij}$
    - 中间型指标：$M = \max|X_i - X_{best}|$，$X'_i = 1 - \frac{|X_i - X_{best}|}{M}$
@@ -248,7 +291,7 @@ AI:我有XX数据存储在XX, 自变量在XX列, 因变量在XX列, 我想构建
 
 1. **标准化矩阵** ：消除量纲影响
    $Z_{ij} = \frac{X'_{ij}}{\sqrt{\sum_{i=1}^m (X'_{ij})^2}}$
-
+这里可以使用加权，权重来源于主观权重，熵权法等
 2. **正负理想解**  
    - 正理想解$Z^+ = (\max Z_1, ..., \max Z_n)$  
    - 负理想解$Z^- = (\min Z_1, ..., \min Z_n)$
@@ -258,10 +301,8 @@ AI:我有XX数据存储在XX, 自变量在XX列, 因变量在XX列, 我想构建
    - 到负理想解：$D_i^- = \sqrt{ \sum_{j=1}^n (Z_{ij} - Z_j^-)^2 }$
 
 5. **计算接近度**  
-   - $C_i = \frac{D_i^-}{ D_i^+ + D_i^- }$，$C_i \in (0,1)$，$C_i$越大越优。
+- $C_i = \frac{D_i^-}{ D_i^+ + D_i^- }$，$C_i \in (0,1)$，$C_i$越大说明$D_i^+$越小，$D_i^-$越大，样本越优。
 
-6. **排序**  
-   - 按$C_i$从大到小排序，得出最终优劣。
 
 - [ ] matlab程序🔼 
 
