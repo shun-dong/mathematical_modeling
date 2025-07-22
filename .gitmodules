@@ -2,3 +2,6 @@
 [submodule "PastQuestions"]
 	path = PastQuestions
 	url = https://gitee.com/jiufafeng/cumcm-past-questions.git
+[submodule "Template"]
+	path = Template
+	url = https://github.com/latexstudio/CUMCMThesis.git
