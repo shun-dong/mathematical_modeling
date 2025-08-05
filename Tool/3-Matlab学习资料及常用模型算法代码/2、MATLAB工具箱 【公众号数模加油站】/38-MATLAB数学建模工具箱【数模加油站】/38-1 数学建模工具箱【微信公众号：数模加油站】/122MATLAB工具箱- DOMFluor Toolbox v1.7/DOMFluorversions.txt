@@ -1,0 +1,29 @@
+V1-0 06/may/2008
+-Original version.
+
+V1-1 23June 2008. 
+-Small errors in help text corrected.
+
+v1-2.   
+-Corrected RandInitAnalysis, plotted number of iterations instead of sum of squared error. 
+-New function called MeanError added.
+
+v1-3.9 October 2008.
+-Edited the EEMCut fucntion to provide three plotting options (Yes-pause, no-pause and no plot).
+-EEMCut modified to remove need for flucut.
+-Edited all of the plot fucntions so that an error message does not occur after plotting the last sample.
+
+v1-4 16 October 2008.
+-Edited the toolbox so that PARAFAC is embedded in the fucntions that call it. This means that there should not be any conflicts with the PLS_toolbox (if installed)
+-DOMFluor.m added.
+
+
+v1-5 27 October 2008
+-Edited EEMCut to correct an earlier error. Before it did not plot the uncut EEm but twice the cut eem.
+
+v1-6 07November 2008.
+-Edited EEMCut, PlotEEMby4, PlotEEMby4fixedZ,  PlotSurfby4, PlotSurfby4fixedZ, for a minor error that reuslted in not plotting last sample.
+
+v1-7 27February 2009.
+-Edited Compare2Model, COmpare2ModelSurf, EvalModel and EvalModelSurf for an error that reuslted in not plotting last sample in a data set.
+

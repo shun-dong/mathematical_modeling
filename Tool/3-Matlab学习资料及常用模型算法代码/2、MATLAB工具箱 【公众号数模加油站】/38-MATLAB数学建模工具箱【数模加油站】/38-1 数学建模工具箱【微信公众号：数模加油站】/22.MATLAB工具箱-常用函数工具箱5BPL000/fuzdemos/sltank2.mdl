@@ -1,0 +1,1179 @@
+Model {
+  Name			  "sltank2"
+  Version		  2.00
+  SimParamPage		  Solver
+  SampleTimeColors	  off
+  WideVectorLines	  off
+  PaperOrientation	  landscape
+  StartTime		  "0"
+  StopTime		  "10000"
+  Solver		  ode23
+  RelTol		  "1e-3"
+  AbsTol		  "1e-6"
+  Refine		  "1"
+  MaxStep		  "0.2"
+  InitialStep		  "auto"
+  FixedStep		  "auto"
+  MaxOrder		  5
+  OutputOption		  RefineOutputTimes
+  OutputTimes		  "[]"
+  LoadExternalInput	  off
+  ExternalInput		  "[t, u]"
+  SaveTime		  off
+  TimeSaveName		  "tout"
+  SaveState		  off
+  StateSaveName		  "xout"
+  SaveOutput		  off
+  OutputSaveName	  "yout"
+  LoadInitialState	  off
+  InitialState		  "xInitial"
+  SaveFinalState	  off
+  FinalStateName	  "xFinal"
+  LimitMaxRows		  off
+  MaxRows		  "1000"
+  Decimation		  "1"
+  AlgebraicLoopMsg	  warning
+  MinStepSizeMsg	  warning
+  UnconnectedInputMsg	  warning
+  UnconnectedOutputMsg	  warning
+  UnconnectedLineMsg	  warning
+  ConsistencyChecking	  off
+  ZeroCross		  on
+  PreLoadFcn		  "tank2=readfis('tank2');"
+  BlockDefaults {
+    Orientation		    right
+    ForegroundColor	    black
+    BackgroundColor	    white
+    DropShadow		    off
+    NamePlacement	    normal
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    normal
+    FontAngle		    normal
+    ShowName		    on
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    center
+    VerticalAlignment	    middle
+    ForegroundColor	    black
+    BackgroundColor	    white
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    normal
+    FontAngle		    normal
+  }
+  System {
+    Name		    "sltank2"
+    Location		    [571, 69, 1165, 370]
+    Open		    on
+    ScreenColor		    white
+    Block {
+      BlockType		      SubSystem
+      Name		      "Animation"
+      Position		      [45, 184, 85, 226]
+      Orientation	      left
+      ShowPortLabels	      off
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      off
+      MaskIconUnits	      autoscale
+      System {
+	Name			"Animation"
+	Location		[526, 315, 864, 521]
+	Open			off
+	ScreenColor		white
+	Block {
+	  BlockType		  Inport
+	  Name			  "in_1"
+	  Position		  [20, 25, 40, 45]
+	  Port			  "1"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "in_2"
+	  Position		  [20, 85, 40, 105]
+	  Port			  "2"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux2"
+	  Position		  [95, 50, 125, 85]
+	  Inputs		  "2"
+	}
+	Block {
+	  BlockType		  S-Function
+	  Name			  "S-Function"
+	  Position		  [165, 46, 220, 94]
+	  FunctionName		  "animtank"
+	  Parameters		  "1"
+	}
+	Block {
+	  BlockType		  Scope
+	  Name			  "Scope1"
+	  Position		  [180, 115, 210, 145]
+	  Floating		  off
+	  Location		  [68, 146, 342, 467]
+	  Open			  off
+	  Grid			  on
+	  TickLabels		  on
+	  ZoomMode		  on
+	  TimeRange		  "200.000000"
+	  YMin			  "-2.000000"
+	  YMax			  "2.000000"
+	  SaveToWorkspace	  off
+	  SaveName		  "ScopeData"
+	  LimitMaxRows		  on
+	  MaxRows		  "5000"
+	  Decimation		  "1"
+	  SampleInput		  off
+	  SampleTime		  "0"
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator"
+	  Position		  [250, 60, 270, 80]
+	}
+	Line {
+	  SrcBlock		  "in_2"
+	  SrcPort		  1
+	  DstBlock		  "Mux2"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "in_1"
+	  SrcPort		  1
+	  DstBlock		  "Mux2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mux2"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  Branch {
+	    DstBlock		    "S-Function"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 60]
+	    DstBlock		    "Scope1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "S-Function"
+	  SrcPort		  1
+	  DstBlock		  "Terminator"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Derivative"
+      Position		      [165, 116, 205, 154]
+      ShowPortLabels	      off
+      System {
+	Name			"Derivative"
+	Location		[105, 3131, 273, 3131]
+	Open			on
+	ScreenColor		white
+	Block {
+	  BlockType		  Inport
+	  Name			  "in_1"
+	  Position		  [15, 45, 35, 65]
+	  Port			  "1"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  Derivative
+	  Name			  "Derivative"
+	  Position		  [60, 39, 110, 71]
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "level\nchange"
+	  Position		  [135, 39, 170, 71]
+	  UpperLimit		  "0.1"
+	  LowerLimit		  "-0.1"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "out_1"
+	  Position		  [200, 45, 220, 65]
+	  Port			  "1"
+	  OutputWhenDisabled	  held
+	  InitialOutput		  "0"
+	}
+	Line {
+	  SrcBlock		  "in_1"
+	  SrcPort		  1
+	  DstBlock		  "Derivative"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "level\nchange"
+	  SrcPort		  1
+	  DstBlock		  "out_1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Derivative"
+	  SrcPort		  1
+	  DstBlock		  "level\nchange"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      S-Function
+      Name		      "Fuzzy\nLogic\nController"
+      Position		      [305, 49, 360, 101]
+      FunctionName	      "sffis"
+      Parameters	      "fismatrix"
+      MaskType		      "FIS"
+      MaskDescription	      "FIS"
+      MaskHelp		      "Fuzzy Inference System"
+      MaskPromptString	      "FIS Matrix:"
+      MaskStyleString	      "edit"
+      MaskInitialization      "fismatrix = @1;"
+      MaskDisplay	      "plot(0, -0.3, 6, -0.3, 0, 1.2, 6, 1.2, [0 "
+			      "6], [0 0], [1 2 3],[0 1 0],[2 3 4],[0 1 0],[3 "
+			      "4 5],[0 1 0])"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      off
+      MaskIconUnits	      autoscale
+      MaskValueString	      "tank2"
+    }
+    Block {
+      BlockType		      Mux
+      Name		      "Mux1"
+      Position		      [245, 56, 275, 89]
+      Inputs		      "2"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "PID \nController"
+      Position		      [310, 185, 350, 225]
+      ShowPortLabels	      off
+      MaskType		      "PID Controller"
+      MaskDescription	      "Enter expressions for proportional, integral, "
+			      "and derivative terms.\nP+I/s+Ds"
+      MaskHelp		      "This block implements a PID controller where "
+			      "parameters are entered for the Proportional, "
+			      "Integral and Derivative terms. Unmask this "
+			      "block to see how it works. The derivative "
+			      "term is implemented using a true derivative "
+			      "block."
+      MaskPromptString	      "Proportional:|Integral|Derivative:"
+      MaskStyleString	      "edit,edit,edit"
+      MaskInitialization      "P=@1; I=@2; D=@3;"
+      MaskDisplay	      "disp('PID')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      off
+      MaskIconUnits	      autoscale
+      MaskValueString	      "2|0|1"
+      System {
+	Name			"PID \nController"
+	Location		[8, 55, 370, 299]
+	Open			off
+	ScreenColor		white
+	Block {
+	  BlockType		  Inport
+	  Name			  "In_1"
+	  Position		  [25, 65, 45, 85]
+	  Port			  "1"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "D"
+	  Position		  [95, 129, 115, 151]
+	  Gain			  "D"
+	}
+	Block {
+	  BlockType		  Derivative
+	  Name			  "Derivative"
+	  Position		  [150, 128, 190, 152]
+	}
+	Block {
+	  BlockType		  TransferFcn
+	  Name			  "Integral"
+	  Position		  [110, 57, 145, 93]
+	  Numerator		  "[I]"
+	  Denominator		  "[1 0]"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Proportional"
+	  Position		  [120, 13, 140, 37]
+	  Gain			  "P"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum"
+	  Position		  [245, 57, 265, 93]
+	  Inputs		  "+++"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out_1"
+	  Position		  [290, 65, 310, 85]
+	  Port			  "1"
+	  OutputWhenDisabled	  held
+	  InitialOutput		  "0"
+	}
+	Line {
+	  SrcBlock		  "D"
+	  SrcPort		  1
+	  DstBlock		  "Derivative"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sum"
+	  SrcPort		  1
+	  DstBlock		  "Out_1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "In_1"
+	  SrcPort		  1
+	  Points		  [15, 0]
+	  Branch {
+	    Points		    [0, 65]
+	    DstBlock		    "D"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [15, 0]
+	    Branch {
+	      Points		      [0, -50]
+	      DstBlock		      "Proportional"
+	      DstPort		      1
+	    }
+	    Branch {
+	      DstBlock		      "Integral"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "Derivative"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, -55]
+	  DstBlock		  "Sum"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Integral"
+	  SrcPort		  1
+	  DstBlock		  "Sum"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Proportional"
+	  SrcPort		  1
+	  Points		  [65, 0; 0, 40]
+	  DstBlock		  "Sum"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Set Point"
+      Position		      [45, 32, 85, 78]
+      ShowPortLabels	      off
+      System {
+	Name			"Set Point"
+	Location		[228, 242, 439, 430]
+	Open			off
+	ScreenColor		white
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  Position		  [45, 31, 70, 59]
+	  Value			  "1"
+	}
+	Block {
+	  BlockType		  SignalGenerator
+	  Name			  "Signal\nGenerator"
+	  Position		  [35, 108, 80, 142]
+	  WaveForm		  square
+	  Amplitude		  "0.500000"
+	  Frequency		  "0.250000"
+	  Units			  rad/sec
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum1"
+	  Position		  [115, 60, 135, 100]
+	  Inputs		  "+-"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "out_1"
+	  Position		  [165, 70, 185, 90]
+	  Port			  "1"
+	  OutputWhenDisabled	  held
+	  InitialOutput		  "0"
+	}
+	Line {
+	  SrcBlock		  "Sum1"
+	  SrcPort		  1
+	  DstBlock		  "out_1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  Points		  [15, 0; 0, 25]
+	  DstBlock		  "Sum1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Signal\nGenerator"
+	  SrcPort		  1
+	  Points		  [10, 0; 0, -35]
+	  DstBlock		  "Sum1"
+	  DstPort		  2
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Switch"
+      Position		      [400, 114, 445, 161]
+      ShowPortLabels	      off
+      System {
+	Name			"Switch"
+	Location		[300, 134, 545, 301]
+	Open			off
+	ScreenColor		white
+	Block {
+	  BlockType		  Inport
+	  Name			  "in_1"
+	  Position		  [30, 15, 50, 35]
+	  Port			  "1"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "in_2"
+	  Position		  [35, 110, 55, 130]
+	  Port			  "2"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch"
+	  Position		  [110, 43, 140, 97]
+	  Threshold		  "0"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "const"
+	  Position		  [15, 56, 55, 84]
+	  Value			  "0.5"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "out_1"
+	  Position		  [170, 60, 190, 80]
+	  Port			  "1"
+	  OutputWhenDisabled	  held
+	  InitialOutput		  "0"
+	}
+	Line {
+	  SrcBlock		  "in_2"
+	  SrcPort		  1
+	  DstBlock		  "Switch"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Switch"
+	  SrcPort		  1
+	  DstBlock		  "out_1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "in_1"
+	  SrcPort		  1
+	  DstBlock		  "Switch"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "const"
+	  SrcPort		  1
+	  DstBlock		  "Switch"
+	  DstPort		  2
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Water\nTank"
+      Position		      [470, 115, 515, 165]
+      ShowPortLabels	      off
+      System {
+	Name			"Water\nTank"
+	Location		[554, 340, 866, 563]
+	Open			on
+	ScreenColor		white
+	Block {
+	  BlockType		  Inport
+	  Name			  "in_1"
+	  Position		  [35, 45, 55, 65]
+	  Port			  "1"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Subsystem"
+	  Position		  [100, 68, 150, 112]
+	  ShowPortLabels	  off
+	  MaskType		  "Valve"
+	  MaskDescription	  "Valve"
+	  MaskPromptString	  "Initial position [0=closed 1=open]:"
+	  MaskStyleString	  "edit"
+	  MaskInitialization	  "InitialPosition = @1;"
+	  MaskDisplay		  "disp('VALVE')"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  off
+	  MaskIconUnits		  autoscale
+	  MaskValueString	  "0"
+	  System {
+	    Name		    "Subsystem"
+	    Location		    [408, 498, 736, 676]
+	    Open		    off
+	    ScreenColor		    white
+	    Block {
+	      BlockType		      Inport
+	      Name		      "control"
+	      Position		      [20, 20, 40, 40]
+	      Port		      "1"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "source flow"
+	      Position		      [20, 110, 40, 130]
+	      Port		      "2"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Limited Integrator"
+	      Position		      [80, 9, 130, 51]
+	      ShowPortLabels	      off
+	      MaskType		      "Limited integrator."
+	      MaskDescription	      "Limited integrator"
+	      MaskHelp		      "Implements a limited integrator with "
+				      "\\nan expression of the form:\\n\\nif(x<"
+				      "=lb and u<0) or (x>=ub and u>0)\\n\\txdo"
+				      "t=0\\nelse\\n\\txdot=u."
+	      MaskPromptString	      "Lower bound:|Upper bound:|Initial "
+				      "condition"
+	      MaskStyleString	      "edit,edit,edit"
+	      MaskInitialization      "lb = @1; ub = @2; xi = @3;"
+	      MaskDisplay	      "plot(-1,-0.2,3.5,1.2,[0.05,1,2,2.9],[0,0"
+				      ",1,1]);disp(' 1/s    ')"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      off
+	      MaskIconUnits	      autoscale
+	      MaskValueString	      "0|1|InitialPosition"
+	      System {
+		Name			"Limited Integrator"
+		Location		[0, 0, 791, 233]
+		Open			off
+		ScreenColor		white
+		Block {
+		  BlockType		  Inport
+		  Name			  "In_1"
+		  Position		  [20, 130, 40, 150]
+		  Port			  "1"
+		  PortWidth		  "-1"
+		  SampleTime		  "-1"
+		}
+		Block {
+		  BlockType		  Fcn
+		  Name			  "Fcn"
+		  Position		  [150, 116, 520, 154]
+		  Expr			  "u[2]*((((u[1]>lb)+(u[2]>=0))>0) "
+					  "* (((u[1]<ub)+(u[2]<=0))>0))"
+		}
+		Block {
+		  BlockType		  Integrator
+		  Name			  "Integrator"
+		  Position		  [540, 126, 585, 144]
+		  ExternalReset		  none
+		  InitialConditionSource  internal
+		  InitialCondition	  "xi"
+		  LimitOutput		  off
+		  UpperSaturationLimit	  "inf"
+		  LowerSaturationLimit	  "-inf"
+		  ShowSaturationPort	  off
+		  ShowStatePort		  off
+		  AbsoluteTolerance	  "auto"
+		}
+		Block {
+		  BlockType		  Mux
+		  Name			  "Mux"
+		  Position		  [85, 116, 115, 149]
+		  Inputs		  "2"
+		}
+		Block {
+		  BlockType		  Saturate
+		  Name			  "Saturation"
+		  Position		  [630, 121, 675, 149]
+		  UpperLimit		  "ub"
+		  LowerLimit		  "lb"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Out_1"
+		  Position		  [720, 125, 740, 145]
+		  Port			  "1"
+		  OutputWhenDisabled	  held
+		  InitialOutput		  "0"
+		}
+		Line {
+		  SrcBlock		  "Integrator"
+		  SrcPort		  1
+		  Points		  [10, 0]
+		  Branch {
+		    Points		    [0, -100; -545, 0; 0, 90]
+		    DstBlock		    "Mux"
+		    DstPort		    1
+		  }
+		  Branch {
+		    DstBlock		    "Saturation"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "Fcn"
+		  SrcPort		  1
+		  DstBlock		  "Integrator"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Mux"
+		  SrcPort		  1
+		  DstBlock		  "Fcn"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "In_1"
+		  SrcPort		  1
+		  DstBlock		  "Mux"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Saturation"
+		  SrcPort		  1
+		  DstBlock		  "Out_1"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      Position		      [180, 76, 215, 134]
+	      Inputs		      "2"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "out flow"
+	      Position		      [250, 95, 270, 115]
+	      Port		      "1"
+	      OutputWhenDisabled      held
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "source flow"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      DstBlock		      "out flow"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "control"
+	      SrcPort		      1
+	      DstBlock		      "Limited Integrator"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Limited Integrator"
+	      SrcPort		      1
+	      Points		      [25, 0; 0, 60]
+	      DstBlock		      "Product"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator"
+	  Position		  [265, 110, 285, 130]
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator1"
+	  Position		  [265, 165, 285, 185]
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "tank 2"
+	  Position		  [175, 61, 235, 119]
+	  ShowPortLabels	  off
+	  MaskType		  "Water tank"
+	  MaskDescription	  "Cylindrical water tank with overflow signal"
+	  MaskPromptString	  "Height of tank (m):|Bottom area (m^2):|Out "
+				  "pipe crossection (m^2):|Overflow sensor "
+				  "distance from top (m):|Initial level "
+				  "height (m):"
+	  MaskStyleString	  "edit,edit,edit,edit,edit"
+	  MaskInitialization	  "ht=@1;area=@2;outletArea=@3;overflowLimit=@4"
+				  ";initialHt=@5;"
+	  MaskDisplay		  "disp('WATER\\nTANK')"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  off
+	  MaskIconUnits		  autoscale
+	  MaskValueString	  "2|1|0.05|0|0.5"
+	  System {
+	    Name		    "tank 2"
+	    Location		    [109, 460, 655, 768]
+	    Open		    on
+	    ScreenColor		    white
+	    Block {
+	      BlockType		      Inport
+	      Name		      "flow\nin"
+	      Position		      [25, 175, 45, 195]
+	      Port		      "1"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "1/area"
+	      Position		      [220, 167, 270, 223]
+	      Gain		      "1/area"
+	    }
+	    Block {
+	      BlockType		      Relay
+	      Name		      "Overflow sensor"
+	      Position		      [385, 18, 425, 62]
+	      OnSwitchValue	      "ht - overflowLimit"
+	      OffSwitchValue	      "ht - overflowLimit"
+	      OnOutputValue	      "1"
+	      OffOutputValue	      "0"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "outletArea"
+	      Position		      [410, 167, 460, 223]
+	      Gain		      "outletArea"
+	    }
+	    Block {
+	      BlockType		      Fcn
+	      Name		      "sqrt(2gh)"
+	      Position		      [300, 171, 390, 219]
+	      Expr		      "sqrt(2*9.8*u)"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "sum"
+	      Position		      [105, 175, 125, 210]
+	      Inputs		      "+-"
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "tank\nvolume"
+	      Position		      [150, 174, 200, 216]
+	      ShowPortLabels	      off
+	      MaskType		      "Limited integrator."
+	      MaskDescription	      "Limited integrator"
+	      MaskHelp		      "Implements a limited integrator with "
+				      "\\nan expression of the form:\\n\\nif(x<"
+				      "=lb and u<0) or (x>=ub and u>0)\\n\\txdo"
+				      "t=0\\nelse\\n\\txdot=u."
+	      MaskPromptString	      "Lower bound:|Upper bound:|Initial "
+				      "condition"
+	      MaskStyleString	      "edit,edit,edit"
+	      MaskInitialization      "lb = @1; ub = @2; xi = @3;"
+	      MaskDisplay	      "plot(-1,-0.2,3.5,1.2,[0.05,1,2,2.9],[0,0"
+				      ",1,1]);disp(' 1/s    ')"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      off
+	      MaskIconUnits	      autoscale
+	      MaskValueString	      "0|ht * area|initialHt * area"
+	      System {
+		Name			"tank\nvolume"
+		Location		[0, 0, 791, 233]
+		Open			off
+		ScreenColor		white
+		Block {
+		  BlockType		  Inport
+		  Name			  "In_1"
+		  Position		  [20, 130, 40, 150]
+		  Port			  "1"
+		  PortWidth		  "-1"
+		  SampleTime		  "-1"
+		}
+		Block {
+		  BlockType		  Fcn
+		  Name			  "Fcn"
+		  Position		  [150, 116, 520, 154]
+		  Expr			  "u[2]*((((u[1]>lb)+(u[2]>=0))>0) "
+					  "* (((u[1]<ub)+(u[2]<=0))>0))"
+		}
+		Block {
+		  BlockType		  Integrator
+		  Name			  "Integrator"
+		  Position		  [540, 126, 585, 144]
+		  ExternalReset		  none
+		  InitialConditionSource  internal
+		  InitialCondition	  "xi"
+		  LimitOutput		  off
+		  UpperSaturationLimit	  "inf"
+		  LowerSaturationLimit	  "-inf"
+		  ShowSaturationPort	  off
+		  ShowStatePort		  off
+		  AbsoluteTolerance	  "auto"
+		}
+		Block {
+		  BlockType		  Mux
+		  Name			  "Mux"
+		  Position		  [85, 116, 115, 149]
+		  Inputs		  "2"
+		}
+		Block {
+		  BlockType		  Saturate
+		  Name			  "Saturation"
+		  Position		  [630, 121, 675, 149]
+		  UpperLimit		  "ub"
+		  LowerLimit		  "lb"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Out_1"
+		  Position		  [720, 125, 740, 145]
+		  Port			  "1"
+		  OutputWhenDisabled	  held
+		  InitialOutput		  "0"
+		}
+		Line {
+		  SrcBlock		  "Integrator"
+		  SrcPort		  1
+		  Points		  [10, 0]
+		  Branch {
+		    Points		    [0, -100; -545, 0; 0, 90]
+		    DstBlock		    "Mux"
+		    DstPort		    1
+		  }
+		  Branch {
+		    DstBlock		    "Saturation"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "Fcn"
+		  SrcPort		  1
+		  DstBlock		  "Integrator"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Mux"
+		  SrcPort		  1
+		  DstBlock		  "Fcn"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "In_1"
+		  SrcPort		  1
+		  DstBlock		  "Mux"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Saturation"
+		  SrcPort		  1
+		  DstBlock		  "Out_1"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "water\nlevel"
+	      Position		      [495, 100, 515, 120]
+	      Port		      "1"
+	      OutputWhenDisabled      held
+	      InitialOutput	      "0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "flow\nout"
+	      Position		      [495, 185, 515, 205]
+	      Port		      "2"
+	      OutputWhenDisabled      held
+	      InitialOutput	      "0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "overflow\nflag"
+	      Position		      [495, 30, 515, 50]
+	      Port		      "3"
+	      OutputWhenDisabled      held
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "1/area"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      Branch {
+		Points			[10, 0; 0, -85]
+		Branch {
+		  DstBlock		  "water\nlevel"
+		  DstPort		  1
+		}
+		Branch {
+		  Points		  [0, -70]
+		  DstBlock		  "Overflow sensor"
+		  DstPort		  1
+		}
+	      }
+	      Branch {
+		DstBlock		"sqrt(2gh)"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "outletArea"
+	      SrcPort		      1
+	      Points		      [10, 0]
+	      Branch {
+		Points			[0, 65; -390, 0; 0, -60]
+		DstBlock		"sum"
+		DstPort			2
+	      }
+	      Branch {
+		DstBlock		"flow\nout"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "sqrt(2gh)"
+	      SrcPort		      1
+	      DstBlock		      "outletArea"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "tank\nvolume"
+	      SrcPort		      1
+	      DstBlock		      "1/area"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Overflow sensor"
+	      SrcPort		      1
+	      DstBlock		      "overflow\nflag"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "flow\nin"
+	      SrcPort		      1
+	      DstBlock		      "sum"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "sum"
+	      SrcPort		      1
+	      DstBlock		      "tank\nvolume"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "tank max\ninflow"
+	  Position		  [20, 109, 65, 141]
+	  Value			  "0.5"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "out_1"
+	  Position		  [265, 60, 285, 80]
+	  Port			  "1"
+	  OutputWhenDisabled	  held
+	  InitialOutput		  "0"
+	}
+	Line {
+	  SrcBlock		  "Subsystem"
+	  SrcPort		  1
+	  DstBlock		  "tank 2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "tank max\ninflow"
+	  SrcPort		  1
+	  Points		  [5, 0; 0, -25]
+	  DstBlock		  "Subsystem"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "tank 2"
+	  SrcPort		  1
+	  DstBlock		  "out_1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "in_1"
+	  SrcPort		  1
+	  Points		  [15, 0; 0, 25]
+	  DstBlock		  "Subsystem"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "tank 2"
+	  SrcPort		  2
+	  Points		  [10, 0]
+	  DstBlock		  "Terminator"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "tank 2"
+	  SrcPort		  3
+	  Points		  [0, 65]
+	  DstBlock		  "Terminator1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "level\nerror1"
+      Position		      [175, 43, 195, 87]
+      Inputs		      "+-"
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "level\nerror2"
+      Position		      [175, 183, 195, 227]
+      Inputs		      "+-"
+    }
+    Line {
+      SrcBlock		      "Water\nTank"
+      SrcPort		      1
+      Points		      [15, 0; 0, 145; -410, 0; 0, -70]
+      Branch {
+	Points			[0, -80]
+	Branch {
+	  DstBlock		  "Derivative"
+	  DstPort		  1
+	}
+	Branch {
+	  Points		  [0, -60]
+	  DstBlock		  "level\nerror1"
+	  DstPort		  2
+	}
+      }
+      Branch {
+	DstBlock		"Animation"
+	DstPort			2
+      }
+      Branch {
+	DstBlock		"level\nerror2"
+	DstPort			2
+      }
+    }
+    Line {
+      SrcBlock		      "level\nerror2"
+      SrcPort		      1
+      DstBlock		      "PID \nController"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Derivative"
+      SrcPort		      1
+      Points		      [15, 0; 0, -55]
+      DstBlock		      "Mux1"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Set Point"
+      SrcPort		      1
+      Points		      [20, 0]
+      Branch {
+	Points			[0, 140]
+	Branch {
+	  DstBlock		  "level\nerror2"
+	  DstPort		  1
+	}
+	Branch {
+	  DstBlock		  "Animation"
+	  DstPort		  1
+	}
+      }
+      Branch {
+	DstBlock		"level\nerror1"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "PID \nController"
+      SrcPort		      1
+      Points		      [15, 0; 0, -55]
+      DstBlock		      "Switch"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Fuzzy\nLogic\nController"
+      SrcPort		      1
+      Points		      [5, 0; 0, 50]
+      DstBlock		      "Switch"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Switch"
+      SrcPort		      1
+      DstBlock		      "Water\nTank"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "level\nerror1"
+      SrcPort		      1
+      DstBlock		      "Mux1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Mux1"
+      SrcPort		      1
+      DstBlock		      "Fuzzy\nLogic\nController"
+      DstPort		      1
+    }
+  }
+}

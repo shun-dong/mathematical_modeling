@@ -1,0 +1,348 @@
+# $Revision: 1.9 $
+Model {
+  Name			  "fuzblock"
+  Version		  2.20
+  SimParamPage		  Solver
+  SampleTimeColors	  off
+  InvariantConstants	  off
+  WideVectorLines	  off
+  ShowLineWidths	  off
+  StartTime		  "0"
+  StopTime		  "10000"
+  Solver		  ode45
+  RelTol		  "1e-3"
+  AbsTol		  "1e-6"
+  Refine		  "1"
+  MaxStep		  "0.1"
+  InitialStep		  "auto"
+  FixedStep		  "auto"
+  MaxOrder		  5
+  OutputOption		  RefineOutputTimes
+  OutputTimes		  "[]"
+  LoadExternalInput	  off
+  ExternalInput		  "[t, u]"
+  SaveTime		  off
+  TimeSaveName		  "tout"
+  SaveState		  off
+  StateSaveName		  "xout"
+  SaveOutput		  off
+  OutputSaveName	  "yout"
+  LoadInitialState	  off
+  InitialState		  "xInitial"
+  SaveFinalState	  off
+  FinalStateName	  "xFinal"
+  LimitMaxRows		  off
+  MaxRows		  "1000"
+  Decimation		  "1"
+  AlgebraicLoopMsg	  warning
+  MinStepSizeMsg	  warning
+  UnconnectedInputMsg	  warning
+  UnconnectedOutputMsg	  warning
+  UnconnectedLineMsg	  warning
+  ConsistencyChecking	  off
+  ZeroCross		  on
+  SimulationMode	  normal
+  RTWSystemTargetFile	  "grt.tlc"
+  RTWInlineParameters	  off
+  RTWPlaceOutputsASAP	  off
+  RTWRetainRTWFile	  off
+  RTWTemplateMakefile	  "grt_unix.tmf"
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  BlockDefaults {
+    Orientation		    right
+    ForegroundColor	    black
+    BackgroundColor	    white
+    DropShadow		    off
+    NamePlacement	    normal
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    normal
+    FontAngle		    normal
+    ShowName		    on
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    center
+    VerticalAlignment	    middle
+    ForegroundColor	    black
+    BackgroundColor	    white
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    normal
+    FontAngle		    normal
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    normal
+    FontAngle		    normal
+  }
+  System {
+    Name		    "fuzblock"
+    Location		    [26, 73, 521, 331]
+    Open		    on
+    ToolBar		    on
+    StatusBar		    on
+    ScreenColor		    white
+    PaperOrientation	    landscape
+    PaperPositionMode	    auto
+    PaperType		    usletter
+    PaperUnits		    inches
+    Block {
+      BlockType		      SubSystem
+      Name		      "Ball-Beam\nDemo"
+      Ports		      [0, 0, 0, 0, 0]
+      Position		      [235, 45, 288, 102]
+      OpenFcn		      "slbb"
+      ShowPortLabels	      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      none
+      MaskIconUnits	      autoscale
+      System {
+	Name			"Ball-Beam\nDemo"
+	Location		[48, 95, 308, 199]
+	Open			off
+	ToolBar			off
+	StatusBar		off
+	ScreenColor		white
+	PaperOrientation	landscape
+	PaperPositionMode	auto
+	PaperType		usletter
+	PaperUnits		inches
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Cart-Pole\nDemo"
+      Ports		      [0, 0, 0, 0, 0]
+      Position		      [325, 45, 382, 101]
+      OpenFcn		      "slcp"
+      ShowPortLabels	      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      none
+      MaskIconUnits	      autoscale
+      System {
+	Name			"Cart-Pole\nDemo"
+	Location		[262, 336, 522, 440]
+	Open			off
+	ToolBar			off
+	StatusBar		off
+	ScreenColor		white
+	PaperOrientation	landscape
+	PaperPositionMode	auto
+	PaperType		usletter
+	PaperUnits		inches
+      }
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "Fuzzy Logic Controller"
+      Ports		      [1, 1, 0, 0, 0]
+      Position		      [50, 49, 105, 101]
+      FunctionName	      "sffis"
+      Parameters	      "fismatrix"
+      PortCounts	      "[]"
+      SFunctionModules	      "sfsup"
+      MaskType		      "FIS"
+      MaskDescription	      "FIS"
+      MaskHelp		      "Fuzzy Inference System"
+      MaskPromptString	      "FIS Matrix:"
+      MaskStyleString	      "edit"
+      MaskTunableValueString  "on"
+      MaskInitialization      "fismatrix = @1;"
+      MaskDisplay	      "plot(0, -0.3, 6, -0.3, 0, 1.2, 6, 1.2, [0 6], ["
+"0 0], [1 2 3],[0 1 0],[2 3 4],[0 1 0],[3 4 5],[0 1 0])"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      none
+      MaskIconUnits	      autoscale
+      MaskValueString	      "fismat"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Truck-Backup"
+      Ports		      [0, 0, 0, 0, 0]
+      Position		      [420, 45, 473, 104]
+      OpenFcn		      "sltbu"
+      ShowPortLabels	      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      none
+      MaskIconUnits	      autoscale
+      System {
+	Name			"Truck-Backup"
+	Location		[262, 336, 522, 440]
+	Open			off
+	ToolBar			off
+	StatusBar		off
+	ScreenColor		white
+	PaperOrientation	landscape
+	PaperPositionMode	auto
+	PaperType		usletter
+	PaperUnits		inches
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Water-Tank"
+      Ports		      [0, 0, 0, 0, 0]
+      Position		      [150, 45, 200, 100]
+      OpenFcn		      "sltank"
+      ShowPortLabels	      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      none
+      MaskIconUnits	      autoscale
+      System {
+	Name			"Water-Tank"
+	Location		[262, 336, 522, 440]
+	Open			off
+	ToolBar			off
+	StatusBar		off
+	ScreenColor		white
+	PaperOrientation	landscape
+	PaperPositionMode	auto
+	PaperType		usletter
+	PaperUnits		inches
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Water-Tank\nwith ruleviewer"
+      Ports		      [0, 0, 0, 0, 0]
+      Position		      [150, 140, 203, 197]
+      OpenFcn		      "sltankrule"
+      ShowPortLabels	      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      none
+      MaskIconUnits	      autoscale
+      System {
+	Name			"Water-Tank\nwith ruleviewer"
+	Location		[262, 336, 522, 440]
+	Open			off
+	ToolBar			off
+	StatusBar		off
+	ScreenColor		white
+	PaperOrientation	landscape
+	PaperPositionMode	auto
+	PaperType		usletter
+	PaperUnits		inches
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "fuzzy controller \nwith ruleviewer"
+      Ports		      [1, 1, 0, 0, 0]
+      Position		      [40, 141, 100, 189]
+      ShowPortLabels	      on
+      MaskType		      "FIS"
+      MaskDisplay	      "plot(0, -0.3, 6, -0.3, 0, 1.2, 6, 1.2, [0 6], ["
+"0 0], [1 2 3],[0 1 0],[2 3 4],[0 1 0],[3 4 5],[0 1 0])"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      none
+      MaskIconUnits	      autoscale
+      System {
+	Name			"fuzzy controller \nwith ruleviewer"
+	Location		[114, 161, 417, 407]
+	Open			off
+	ToolBar			off
+	StatusBar		off
+	ScreenColor		white
+	PaperOrientation	landscape
+	PaperPositionMode	auto
+	PaperType		usletter
+	PaperUnits		inches
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  Position		  [15, 118, 45, 132]
+	  Port			  "1"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  "Animation1"
+	  Ports			  [1, 0, 0, 0, 0]
+	  Position		  [185, 20, 235, 40]
+	  FunctionName		  "animrule"
+	  Parameters		  "fismatrix"
+	  PortCounts		  "[]"
+	  SFunctionModules	  "''"
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  "Fuzzy Logic Controller"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [80, 99, 135, 151]
+	  FunctionName		  "sffis"
+	  Parameters		  "fismatrix"
+	  PortCounts		  "[]"
+	  SFunctionModules	  "sfsup"
+	  MaskType		  "FIS"
+	  MaskDescription	  "FIS"
+	  MaskHelp		  "Fuzzy Inference System"
+	  MaskPromptString	  "FIS Matrix:"
+	  MaskStyleString	  "edit"
+	  MaskTunableValueString  "on"
+	  MaskInitialization	  "fismatrix = @1;"
+	  MaskDisplay		  "plot(0, -0.3, 6, -0.3, 0, 1.2, 6, 1.2, [0 6"
+"], [0 0], [1 2 3],[0 1 0],[2 3 4],[0 1 0],[3 4 5],[0 1 0])"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  none
+	  MaskIconUnits		  autoscale
+	  MaskValueString	  "fismat"
+	}
+	Block {
+	  BlockType		  ZeroOrderHold
+	  Name			  "Zero-Order\nHold"
+	  Position		  [85, 15, 115, 45]
+	  SampleTime		  "2"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [190, 118, 220, 132]
+	  Port			  "1"
+	  OutputWhenDisabled	  held
+	  InitialOutput		  "0"
+	}
+	Line {
+	  SrcBlock		  "Zero-Order\nHold"
+	  SrcPort		  1
+	  DstBlock		  "Animation1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Fuzzy Logic Controller"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  Points		  [10, 0; 0, -35]
+	  Branch {
+	    Points		    [0, -60]
+	    DstBlock		    "Zero-Order\nHold"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 35]
+	    DstBlock		    "Fuzzy Logic Controller"
+	    DstPort		    1
+	  }
+	}
+      }
+    }
+  }
+}

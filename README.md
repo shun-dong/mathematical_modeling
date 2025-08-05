@@ -5,15 +5,20 @@ aliases:
   - 数学建模
 ---
 
-
 mathematical modeling
 ├── [README.md](README.md)
 ├── [.git/](.git)
 ├── [.gitattributes](.gitattributes)
 ├── [.gitmodules](.gitmodules)
-├── [demo/](demo)
-└── [learn/](learn)
+├── [Demo/](Demo)
+├── [gitignore](gitignore)
+├── [Learn/](Learn)
+├── [PastQuestions/](PastQuestions)
+├── [Resources/](Resources)
+├── [Template/](Template)
+└── [Tool/](Tool)
 
+其中Learn/中有学习资料, PastQuestions/中有往年试题, Template/中有LaTex模板, Tool/中有工具箱([原地址](https://docs.qq.com/doc/DWUNnWUZnZ25wTnVT)), Demo/中有之前一些题的解答(未完成)
 # log
 - ==数学==：先保证理论模型上对了再寻求工程上优化
 - [ ] 是表述问题还是AI能力问题
@@ -22,12 +27,12 @@ mathematical modeling
 - [x] Matlab环境 🔼 ✅ 2025-07-06
 - [ ] 自己做一个练手, 数据：Kaggle: Your Home for Data Science🔼 
 	- [ ] CUMCM2021-A
-		- [/] Q2：审阅代码原理
-		- [ ] 实际上顶点不在轴上：选择node作为顶点
-		- [ ] 一开始就用mask +scipy⏫ 
-		- [ ] 启发式算法⏫ 
+		- [x] Q2：审阅代码原理 ✅ 2025-07-22
+		- [x] 实际上顶点不在轴上：选择node作为顶点 ✅ 2025-07-22
+		- [x] 一开始就用mask +scipy ⏫ ✅ 2025-07-22
+		- [-] 启发式算法 ⏫ ❌ 2025-08-02
 	- [ ] 看看其他类型的题目
-- [ ] 准备材料⏫ 
+- [x] 准备材料 ⏫ ✅ 2025-08-03
 - [ ] 合作一个磨合🔼 
 - [ ] 复习高中概率知识，预习概率论🔼 
 # 分工
@@ -90,7 +95,11 @@ mathematical modeling
 ```prompt
 根据我写出的代码写出详细的使用文字+==公式==的形式进行描述，不用分条，一段一段地进行描述，描述中不要再出现函数变量名称使用文字或者公式替代，可视化部分不需要描述
 ```
-- [ ] 伪代码, 算法示意图
+
+```prompt
+可以用伪代码和算法示意图, 用latex代码
+```
+
 ```prompt
 (对于生成的图)请对该可视化结果进行详细的文字描述，不用分条展示，控制在200字左右
 ```
@@ -162,7 +171,7 @@ WPS->SPSSPRO
 
 特征选择: 选择对模型有用的特征，[降维](C:/Users/liuSu/Projects/数学建模/learn/第三节 数据预处理/附件资料/5、数据简化/降维)
 
-- [ ] 降维原理🔼 
+- [x] 降维原理 🔼 ✅ 2025-08-02
 线性, 非线性
 
 特征提取: 通过技术手段（如PCA）来提取主要特征
@@ -186,7 +195,7 @@ WPS->SPSSPRO
 - 分治法（Divide and Conquer）
 - 枢纽法
 实际上还有一类有理论保证误差范围的近似解
-- [ ] 使用CPLEX/==Gurobi==求解(都可以通过python调用)
+使用CPLEX/==Gurobi==(线性问题)求解(都可以通过python调用)
 
  近似解（Approximate Solution）
 - 启发式算法（Heuristic Algorithms）:牺牲全局最优性以换取计算速度。
@@ -215,7 +224,7 @@ WPS->SPSSPRO
 ## 回归问题
 ### 模型
 直接导入matlab，回归学习，训练所有模型，导出结果表作为支撑，导出最好的模型
-- [/] 回归问题原理 🔼
+- [x] 回归问题原理 🔼 ✅ 2025-08-02
 交叉验证：**K折交叉验证**(K-fold cross validation)指的是把训练数据_D_ 分为 K份，用其中的(K-1)份训练模型，把剩余的1份数据用于评估模型的质量。将这个过程在K份数据上依次循环，并对得到的K个评估结果进行合并
 一般大型5折，小型10折
 
@@ -260,9 +269,9 @@ ROC曲线图$\xrightarrow{面积}$AUC值
 ```prompt
 AI:我有XX数据存储在XX, 自变量在XX列, 因变量在XX列, 我想构建LSTM模型, 给出python代码
 ```
-- [ ] SPSSPRO
-- [ ] 工具箱[LSTM深度学习预测时间序列](https:/space.bilibili.com/52614961/channel/collectiondetail?sid=1362425&spm_id_from=333.788.0.0 "LSTM深度学习预测时间序列")
-
+- SPSSPRO
+- matlab工具箱[LSTM深度学习预测时间序列](https://space.bilibili.com/52614961/channel/collectiondetail?sid=1362425&spm_id_from=333.788.0.0 "LSTM深度学习预测时间序列"),[[深度学习#RNN]]
+	- xsjmqf, Forecast of time series based on LSTM deep learning network, 2023, Gitee repository, https://gitee.com/sxjmqf/lstm-Forecast-of-time-series.git
 # 评价模型
 
 ## 主成分分析法

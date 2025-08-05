@@ -1,0 +1,17 @@
+解压下载的名为bnt-master.zip的压缩文件。
+
+将解压出来的整个目录bnt-master复制到Matlab的安装目录的toolbox目录下。
+
+打开Matlab，在命令窗口下输入如下代码： 
+
+	addpath(genpath('D:\Software\MATLAB\R2017a\toolbox\bnt-master'));   
+
+	savepath;                                                                    
+
+检验方法：
+
+	在命令窗口下输入：which test_BNT.m
+
+	得到反馈：D:\Software\MATLAB\R2017a\toolbox\bnt-master\BNT\test_BNT.m
+
+	即表示成功设置完成，现在就可以用Matlab的BNT工具箱了。

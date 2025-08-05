@@ -1,0 +1,28 @@
+function surf=conn_surf_readsurfresampled(filenames,dowrite)
+if nargin<2||isempty(dowrite), dowrite=false; end
+if ~iscell(filenames), filenames=cellstr(filenames); end
+
+for n=1:numel(filenames)
+    filename=filenames{n};
+    [file_path,file_name,file_ext]=fileparts(filename);
+    file_name=[file_name,file_ext];
+    if strncmp(file_name,'lh.',3), hem='lh';
+    elseif strncmp(file_name,'rh.',3), hem='rh';
+    else error(['unable to determine hemisphere of file ',filename]);
+    end
+    fileref=fullfile(file_path,[hem,'.sphere.reg']);
+    if ~conn_existfile(fileref), error(['unable to find file ',fileref]); end
+    
+    % resample at sphere reference grid
+    data_ref=conn_freesurfer_read_surf(filename);
+    resolution=8;
+    xyz_ref=conn_freesurfer_read_surf(fileref);
+    [xyz_sphere,sphere2ref,ref2sphere]=conn_surf_sphere(resolution,xyz_ref);
+    xyz=data_ref(ref2sphere,:);
+    faces=xyz_sphere.faces;
+    surf(n)=struct('vertices',xyz,'faces',faces);
+    if dowrite
+        conn_freesurfer_write_surf([filename,'.fsavg'],xyz,faces);
+    end
+end
+    

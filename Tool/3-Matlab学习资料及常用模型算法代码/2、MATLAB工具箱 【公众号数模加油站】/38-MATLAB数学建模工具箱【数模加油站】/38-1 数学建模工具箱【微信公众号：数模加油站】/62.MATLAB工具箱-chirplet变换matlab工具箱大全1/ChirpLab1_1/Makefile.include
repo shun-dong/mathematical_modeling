@@ -1,0 +1,38 @@
+# Change this for other platforms
+OS = $(shell uname)
+TAR = tar
+ZIP = zip
+
+ifeq ($(findstring CYGWIN, $(OS)), CYGWIN)
+MEXEXT = dll
+MEX = mex.bat
+endif
+
+ifeq ($(findstring MINGW, $(OS)), MINGW)
+MEXEXT = dll
+MEX = mex.bat
+endif
+
+ifeq ($(OS), Linux)
+MEXEXT = mexglx
+MEX = mex
+endif
+
+ifeq ($(OS), SunOS)
+MEXEXT = mexsol
+MEX = mex
+endif
+
+ifeq ($(OS), Darwin)
+MEXEXT = mexmac
+MEX = mex
+endif
+
+.SUFFIXES: .$(MEXEXT)
+
+%.$(MEXEXT) : %.c
+	$(MEX) $<
+
+%.$(MEXEXT) : %.cpp
+	$(MEX) $<
+

@@ -1,0 +1,282 @@
+function varargout = shuangfeng(varargin)
+% SHUANGFENG M-file for shuangfeng.fig
+%      SHUANGFENG, by itself, creates a new SHUANGFENG or raises the existing
+%      singleton*.
+%
+%      H = SHUANGFENG returns the handle to a new SHUANGFENG or the handle to
+%      the existing singleton*.
+%
+%      SHUANGFENG('CALLBACK',hObject,eventData,handles,...) calls the local
+%      function named CALLBACK in SHUANGFENG.M with the given input arguments.
+%
+%      SHUANGFENG('Property','Value',...) creates a new SHUANGFENG or raises the
+%      existing singleton*.  Starting from the left, property value pairs are
+%      applied to the GUI before shuangfeng_OpeningFcn gets called.  An
+%      unrecognized property name or invalid value makes property application
+%      stop.  All inputs are passed to shuangfeng_OpeningFcn via varargin.
+%
+%      *See GUI Options on GUIDE's Tools menu.  Choose "GUI allows only one
+%      instance to run (singleton)".
+%
+% See also: GUIDE, GUIDATA, GUIHANDLES
+
+% Edit the above text to modify the response to help shuangfeng
+
+% Last Modified by GUIDE v2.5 30-Apr-2011 19:48:55
+
+% Begin initialization code - DO NOT EDIT
+gui_Singleton = 1;
+gui_State = struct('gui_Name',       mfilename, ...
+                   'gui_Singleton',  gui_Singleton, ...
+                   'gui_OpeningFcn', @shuangfeng_OpeningFcn, ...
+                   'gui_OutputFcn',  @shuangfeng_OutputFcn, ...
+                   'gui_LayoutFcn',  [] , ...
+                   'gui_Callback',   []);
+if nargin && ischar(varargin{1})
+    gui_State.gui_Callback = str2func(varargin{1});
+end
+
+if nargout
+    [varargout{1:nargout}] = gui_mainfcn(gui_State, varargin{:});
+else
+    gui_mainfcn(gui_State, varargin{:});
+end
+% End initialization code - DO NOT EDIT
+
+
+% --- Executes just before shuangfeng is made visible.
+function shuangfeng_OpeningFcn(hObject, eventdata, handles, varargin)
+% This function has no output args, see OutputFcn.
+% hObject    handle to figure
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+% varargin   command line arguments to shuangfeng (see VARARGIN)
+
+% Choose default command line output for shuangfeng
+handles.output = hObject;
+
+% Update handles structure
+guidata(hObject, handles);
+
+% UIWAIT makes shuangfeng wait for user response (see UIRESUME)
+% uiwait(handles.figure1);
+RGB=imread('电子双缝衍射.bmp');%将图像文件读入为MATLAB图像对象数组数据
+axes(handles.axes1);%设置当前图像框为axes1
+image(RGB);%显示图像
+title('电子双缝衍射示意图');
+set(gca, 'XTick', []);%去除短示线跟数据
+set(gca, 'YTick', []);
+
+
+% --- Outputs from this function are returned to the command line.
+function varargout = shuangfeng_OutputFcn(hObject, eventdata, handles) 
+% varargout  cell array for returning output args (see VARARGOUT);
+% hObject    handle to figure
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Get default command line output from handles structure
+varargout{1} = handles.output;
+
+
+% --- Executes on button press in yanshe.
+function yanshe_Callback(hObject, eventdata, handles)
+% hObject    handle to yanshe (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+h=6.62559e-34;
+m=9.10908e-31;
+e=1.6021e-19;
+pi=3.1415926;
+a=str2num(get(handles.a,'String'));
+b=str2num(get(handles.b,'String'));
+n=str2num(get(handles.n,'String'));
+U=str2num(get(handles.U,'String'));
+D=str2num(get(handles.D,'String'));
+lamda=h/sqrt(2*m*e*U);    %计算电子波长lamda
+a=a*(1e-6);
+b=b*(1e-6);
+A=(pi*a)/(lamda*D);B=pi*(a+b)/(lamda*D); %计算A和B
+axes(handles.axes2); 
+axis([-5e-5,5e-5,-5e-5,5e-5])    %设置坐标轴标度范围
+set(gca,'color','w')    %设置坐标面背景颜色   
+title('电子双缝动态演示');
+i=1;
+while i<=n   %用循环结构控制电子的数目                                            
+x=5e-5*(2*rand-1);    %产生-5e-5至-5e-5之间均匀分布的随机数赋给x
+y=5e-5*(2*rand-1);%产生-5e-5至5e-5之间均匀分布的随机数赋给y
+H=(((sin(A*x))^2)/(A*x)^2)*((cos(B*x))^2);   %计算H
+M=rand;              %产生0至1之间均匀分布的随机数赋给M
+if H>=M     %用分支结构选择符合条件的坐标点
+hold on    %保留当前坐标系中已存在的图形对象
+h_point=plot(x,y,'.r','EraseMode','none','markerSize',8);   %用红颜色显示符合条件的坐标点，并赋句句柄值给h_point
+i=i+1;
+pause(0.001)    %暂停0.01秒
+
+end
+end  
+
+
+% --- Executes on button press in qiangdu.
+function qiangdu_Callback(hObject, eventdata, handles)
+% hObject    handle to qiangdu (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+h=6.62559e-34;m=9.10908e-31;
+e=1.6021e-19;pi=3.1415926;
+a=str2num(get(handles.a,'string'));
+b=str2num(get(handles.b,'string'));
+U=str2num(get(handles.U,'string'));
+D=str2num(get(handles.D,'string'));
+a=a*(1e-6);
+b=b*(1e-6);
+lamda=h/sqrt(2*m*e*U);    %计算电子波长lamda
+A=(pi*a)/(lamda*D);B=pi*(a+b)/(lamda*D);  
+x=-5e-5:5e-5/100:5e-5
+H=(((sin(A*x))/(A*x)).^2)*((cos(B*x)).^2); 
+axes(handles.axes3)
+plot(x,H,'r');   
+axis([-5e-5,5e-5,0,1]);
+xlabel('屏上位置x');
+ylabel('相对强度K');
+title('电子双缝衍射相对强度曲线')
+
+
+% --- Executes on button press in clear.
+function clear_Callback(hObject, eventdata, handles)
+% hObject    handle to clear (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+axes(handles.axes2)
+cla ;
+axes(handles.axes3)
+cla ;
+set(handles.a,'string',' ');
+set(handles.b,'string',' ');
+set(handles.D,'string',' ');
+set(handles.U,'string',' ');
+set(handles.n,'string',' ');
+
+
+% --- Executes on button press in back.
+function back_Callback(hObject, eventdata, handles)
+% hObject    handle to back (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+close(shuangfeng);
+get(zongpingtai)
+
+
+
+function a_Callback(hObject, eventdata, handles)
+% hObject    handle to a (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of a as text
+%        str2double(get(hObject,'String')) returns contents of a as a double
+
+
+% --- Executes during object creation, after setting all properties.
+function a_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to a (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+
+function b_Callback(hObject, eventdata, handles)
+% hObject    handle to b (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of b as text
+%        str2double(get(hObject,'String')) returns contents of b as a double
+
+
+% --- Executes during object creation, after setting all properties.
+function b_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to b (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+
+function D_Callback(hObject, eventdata, handles)
+% hObject    handle to D (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of D as text
+%        str2double(get(hObject,'String')) returns contents of D as a double
+
+
+% --- Executes during object creation, after setting all properties.
+function D_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to D (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+
+function U_Callback(hObject, eventdata, handles)
+% hObject    handle to U (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of U as text
+%        str2double(get(hObject,'String')) returns contents of U as a double
+
+
+% --- Executes during object creation, after setting all properties.
+function U_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to U (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+
+function n_Callback(hObject, eventdata, handles)
+% hObject    handle to n (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of n as text
+%        str2double(get(hObject,'String')) returns contents of n as a double
+
+
+% --- Executes during object creation, after setting all properties.
+function n_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to n (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end

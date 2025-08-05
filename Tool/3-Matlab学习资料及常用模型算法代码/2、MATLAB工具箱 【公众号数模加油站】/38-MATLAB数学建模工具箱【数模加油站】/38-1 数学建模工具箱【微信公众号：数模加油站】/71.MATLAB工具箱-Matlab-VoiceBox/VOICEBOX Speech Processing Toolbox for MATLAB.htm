@@ -1,0 +1,357 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0058)http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/voicebox.html -->
+<HTML><HEAD><TITLE>VOICEBOX: Speech Processing Toolbox for MATLAB</TITLE>
+<META content="text/html; charset=windows-1252" http-equiv=Content-Type>
+<META content="MSHTML 5.00.3315.2870" name=GENERATOR>
+<META content="E:\Program Files\Microsoft Office\Office\html.dot" 
+name=Template></HEAD>
+<BODY link=#0000ff vLink=#800080>
+<H1>VOICEBOX: Speech Processing Toolbox for MATLAB</H1>
+<H2>Introduction</H2>
+<P>VOICEBOX is a speech processing toolbox consists of MATLAB routines that are 
+maintained by and mostly written by <A 
+href="http://www.ee.ic.ac.uk/hp/staff/dmb/dmb.html">Mike Brookes</A>, <A 
+href="http://www.ee.ic.ac.uk/">Department of Electrical &amp; Electronic 
+Engineering</A>, <A href="http://www.ic.ac.uk/">Imperial College</A>, Exhibition 
+Road, London SW7 2BT, UK. Several of the routines require MATLAB V5.</P>
+<P>The routines are available as a <A 
+href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/voicebox.tar.Z">compressed 
+tar file</A> or as a <A 
+href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/voicebox.zip">zip archive</A> 
+and are made available under the terms of the <A 
+href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/copying.txt">GNU Public 
+License</A>. </P>
+<P>Please send any comments, suggestions, bug reports etc to <A 
+href="mailto:mike.brookes@ic.ac.uk">mike.brookes@ic.ac.uk</A>. </P>
+<HR>
+
+<H2>Contents</H2>
+<HR>
+
+<DL>
+  <DT><A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/voicebox.html#file">Audio 
+  File Input/Output </A>
+  <DD>Read and write WAV and other speech file formats 
+  <DT><A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/voicebox.html#frequency">Frequency 
+  Scales </A>
+  <DD>Convert between Hz, Mel, Erb and MIDI frequency scales 
+  <DT><A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/voicebox.html#fourier">Fourier/DCT/Hartley 
+  Transforms</A> 
+  <DD>Various related transforms 
+  <DT><A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/voicebox.html#random">Random 
+  Number Generation</A> 
+  <DD>Generate random vectors and noise signals 
+  <DT><A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/voicebox.html#distance">Vector 
+  Distances</A> 
+  <DD>Calculate distances between vector lists 
+  <DT><A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/voicebox.html#analysis">Speech 
+  Analysis</A> 
+  <DD>Active level estimation, Spectrograms 
+  <DT><A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/voicebox.html#lpc">LPC 
+  Analysis of Speech</A> 
+  <DD>Linear Predictive Coding routines 
+  <DT><A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/voicebox.html#synthesis">Speech 
+  Synthesis</A> 
+  <DD>Glottal waveform models 
+  <DT><A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/voicebox.html#enhance">Speech 
+  Enhancement</A> 
+  <DD>Spectral noise subtraction 
+  <DT><A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/voicebox.html#coding">Speech 
+  Coding</A> 
+  <DD>PCM coding, Vector quantisation 
+  <DT><A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/voicebox.html#recog">Speech 
+  Recognition</A> 
+  <DD>Front-end processing for recognition 
+  <DT><A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/voicebox.html#utility">Utility 
+  Functions</A> 
+  <DD>Miscellaneous utility functions </DD></DL>
+<HR>
+
+<HR>
+
+<H2><A name=file>Audio File Input/Output</A></H2>
+<BLOCKQUOTE>
+  <P>Routines are available to read and, in some cases write, a variety of file 
+  formats:</P>
+  <TABLE border=0 cellPadding=2 width="100%">
+    <TBODY>
+    <TR>
+      <TD width=50><B>Read</B></TD>
+      <TD width=50><B>Write</B></TD>
+      <TD width=30><B>Suffix</B></TD>
+      <TD>&nbsp;</TD></TR>
+    <TR>
+      <TD width=50><A 
+        href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/readwav.txt">readwav</A></TD>
+      <TD width=50><A 
+        href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/writewav.txt">writewav</A></TD>
+      <TD width=30>.wav</TD>
+      <TD>These routines allow an arbitrary number of channels and can deal 
+        with linear PCM (any precision up to 32 bits), A-law PCM and Mu-law PCM. 
+        Large files can be read and written in small chunks.</TD></TR>
+    <TR>
+      <TD width=50><A 
+        href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/readhtk.txt">readhtk</A></TD>
+      <TD width=50><A 
+        href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/writehtk.txt">writehtk</A></TD>
+      <TD width=30>.htk</TD>
+      <TD>Read and write waveform files used by Entropic's Hidden Markov 
+        Toolkit.</TD></TR>
+    <TR>
+      <TD width=50><A 
+        href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/readsfs.txt">readsfs</A></TD>
+      <TD width=50>&nbsp;</TD>
+      <TD width=30>.sfs</TD>
+      <TD>Speech Filing system files from Mark Huckvale at UCL.</TD></TR>
+    <TR>
+      <TD width=50><A 
+        href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/readsph.txt">readsph</A></TD>
+      <TD width=50>&nbsp;</TD>
+      <TD width=30>.sph</TD>
+      <TD>NIST Sphere format files (including TIMIT).</TD></TR>
+    <TR>
+      <TD width=50><A 
+        href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/readaif.txt">readaif</A></TD>
+      <TD width=50>&nbsp;</TD>
+      <TD width=30>.aif</TD>
+      <TD>Audio Interchange File Format used by Mac 
+users.</TD></TR></TBODY></TABLE></BLOCKQUOTE>
+<HR>
+
+<H2><A name=frequency>Frequency Scale Conversion</A></H2>
+<UL>
+  <LI>The <I>mel scale</I> is based on the human perception of sinewave pitch. 
+  The routines <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/mel2frq.txt">mel2frq</A> 
+  and <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/frq2mel.txt">frq2mel</A> 
+  convert between this scale and frequency in Hz. 
+  <LI>The <I>erb</I> scale is based on the equivalent rectangular bandwidths of 
+  the human ear. The routines <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/erb2frq.txt">erb2frq</A> 
+  and <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/frq2erb.txt">frq2erb</A> 
+  convert between the erb rate scale and frequency in Hz. 
+  <LI>The <I>midi standard</I> specifies a numbering of <I>semitones</I> with 
+  middle C being 60. The routines <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/frq2midi.txt">frq2midi</A> 
+  and <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/midi2frq.txt">midi2frq</A> 
+  convert between this musical frequency scale and Hz. <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/frq2midi.txt">frq2midi</A> 
+  will in addition output note names in a character format. <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/midi2frq.txt">midi2frq</A> 
+  can use the normal equal tempered scale or else the pythagorean scale of just 
+  intonation. </LI></UL>
+<HR>
+
+<H2><A name=fourier>Fourier, DCT and Hartley Transforms</A></H2>
+<UL>
+  <LI>The routines <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/rfft.txt">rfft</A>, and 
+  <A href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/irfft.txt">irfft</A> 
+  perform forward and inverse fourier transforms on real data. Only half of the 
+  conjugate symmetric transform is generated by the forward routine RFFT. For 
+  even length data, the inverse routine, IRFFT, is asymptotically twice as fast 
+  as the built-in fft routine IFFT. The routine <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/rsfft.txt">rsfft 
+  </A>performs the forward transform on real symmetric data. 
+  <LI>The routines <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/rdct.txt">rdct</A>, and 
+  <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/irdct.txt">irdcft</A> 
+  perform forward and inverse discrete cosine transforms on real data. The 
+  routines are asymptotically twice as fast as the complex-data routines in the 
+  image-processing and signal-processing toolboxes. 
+  <LI>The routine <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/rhartley.txt">rhartley 
+  </A>performs a forward or inverse Hartley transform. </LI></UL>
+<HR>
+
+<H2><A name=random>Random Number Generation</A></H2>
+<UL>
+  <LI>The routine <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/randvec.txt">randvec 
+  </A>generates random vectors with a given mean and covariance. 
+  <LI>The routine <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/usasi.txt">usasi 
+  </A>generates noise with a USASI spectrum. 
+  <LI>The routine <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/randfilt.txt">randfilt</A> 
+  generates filtered gaussian noise without any startup transients. </LI></UL>
+<HR>
+
+<H2><A name=distance>Vector Distance</A></H2>
+<UL>
+  <LI>The routine <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/disteusq.txt">disteusq 
+  </A>calculates the squared euclidean distance between all pairs of rows of two 
+  matrices. 
+  <LI>The routines <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/distitar.txt">distitar</A>, 
+  <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/distisar.txt">distisar</A> 
+  and <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/distchar.txt">distchar</A> 
+  calculate the Itakura, Itakura-Saito and COSH spectral distances between sets 
+  of AR coefficients. 
+  <LI>The routines <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/distitpf.txt">distitpf</A>, 
+  <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/distispf.txt">distispf</A> 
+  and <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/distchpf.txt">distchpf</A> 
+  calculate the Itakura, Itakura-Saito and COSH spectral distances between power 
+  spectra. </LI></UL>
+<HR>
+
+<H2><A name=analysis>Speech Analysis</A></H2>
+<UL>
+  <LI>The routine <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/enframe.txt">enframe</A> 
+  can be used to split a signal up into frames. It can optionally apply a window 
+  to each frame. 
+  <LI>The routine <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/activlev.txt">activlev 
+  </A>calculates the active level of a speech segment according to ITU-T 
+  recommendation P.56. 
+  <LI>The routine <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/spgrambw.txt">spgrambw 
+  </A>draws a monochrome spectrogram with a dB scale. 
+  <LI>The routine <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/schmitt.txt">schmitt 
+  </A>passes a signal through a schmitt trigger. </LI></UL>
+<HR>
+
+<H2><A name=enhance>Speech Enhancement</A></H2>
+<UL>
+  <LI>The routine <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/specsubm.txt">specsubm</A> 
+  implements spectral subtraction using an algorithm of Martin. </LI></UL>
+<HR>
+
+<H2><A name=lpc>LPC Analysis of Speech</A></H2>
+<UL>
+  <LI>The routines <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/lpcauto.txt">lpcauto</A> 
+  and <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/lpccovar.txt">lpccovar</A> 
+  perform linear predictive coding (LPC) analysis. The routines relating to LPC 
+  are described in more detail on <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/lpc.html">another page</A>. 
+  A large number of <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/lpc.html">conversion 
+  routines</A> are included for changing the form of the LPC coefficients (e.g. 
+  AR coefficients, reflection coefficients etc.): these are of the form lpcxx2yy 
+  where xx and yy denote the coefficient sets. The routine <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/lpcrr2am.txt">lpcrr2am 
+  </A>calculates LPC filters for all orders up to a given maximum. 
+  <LI>The routine <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/lpcbwexp.txt">lpcbwexp 
+  </A>performs bandwidth expansion on an LPC filter. 
+  <LI>The routine <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/ccwarpf.txt">ccwarpf 
+  </A>performs frequency warping in the complex cepstrum domain. 
+  <LI>The routine <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/lpcifilt.txt">lpcifilt 
+  </A>performs inverse filtering to estimate the glottal waveform from the 
+  speech signal and the lpc coefficients. 
+  <LI>The routine <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/lpcrand.txt">lpcrand</A> 
+  can be used to generate random, stable filters for testing purposes. </LI></UL>
+<HR>
+
+<H2><A name=synthesis>Speech Synthesis</A></H2>
+<UL>
+  <LI>The routines <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/glotros.txt">glotros</A> 
+  and <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/glotlf.txt">glotlf</A> 
+  implement two common models for the waveform of airflow through the vocal 
+  folds. </LI></UL>
+<HR>
+
+<H2><A name=coding>Speech Coding</A></H2>
+<UL>
+  <LI>The routines <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/lin2pcma.txt">lin2pcma</A>, 
+  <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/lin2pcmu.txt">lin2pcmu</A>, 
+  <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/pcma2lin.txt">pcma2lin</A>, 
+  and <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/pcmu2lin.txt">pcmu2lin</A> 
+  convert audio waveforms to and from the 8-bit A-law and Mu-law PCM formats 
+  that are used in telecommunications: Mu-law is used in the USA and Japan while 
+  A-law is used in the rest of the world. The two formats are very similar and, 
+  for speech waveforms, give about the same perceived quality as 12-bit linear 
+  encoding. Alternate bits in the A-law format are usually inverted before 
+  transmission: the conversion routines can optionally include this. The 
+  conversions are defined by ITU standard G.711. 
+  <LI>The routines <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/kmeans.txt">kmeans 
+  </A>and <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/kmeanlbg.txt">kmeanlbg 
+  </A>perform vector quantisation using the kmeans algorithm. 
+  <LI>The routine <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/potsband.txt">potsband 
+  </A>calculates a bandpass filter corresponding to the standard telephone 
+  passband. </LI></UL>
+<HR>
+
+<H2><A name=recog>Speech Recognition</A></H2>
+<UL>
+  <LI>The routine <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/melcepst.txt">melcepst 
+  </A>implements a mel-cepstrum front end for a recogniser. The associated 
+  bandpass filter matrix is generated by <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/melbankm.txt">melbankm 
+  </A>. 
+  <LI>The routines <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/cep2pow.txt">cep2pow 
+  </A>and <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/pow2cep.txt">pow2cep 
+  </A>convert state means and variances between the mel-cepstrum and power 
+  domains. 
+  <LI>The routine <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/gaussmix.txt">gaussmix</A> 
+  fits a gaussian mixture distribution to a collection of observation vectors. 
+  </LI></UL>
+<HR>
+
+<H2><A name=utility>Utility Functions</A></H2>
+<UL>
+  <LI>The routine <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/zerotrim.txt">zerotrim 
+  </A>removes from a matrix any trailing rows and columns that are all zero. 
+  <LI>The routine <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/logsum.txt">logsum</A> 
+  calculates log(sum(exp(x))) without overflow problems. 
+  <LI>The routine <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/dualdiag.txt">dualdiag</A> 
+  simultaneously diagonalises two matrices: this is useful in computing LDA or 
+  IMELDA transforms. 
+  <LI>The routines <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/permutes.txt">permutes 
+  </A>and <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/choosenk.txt">choosenk 
+  </A>generate respectively all possible permutations of the numbers 1:n and all 
+  possible ways of choosing k elements out of the numbers 1:n without 
+  duplications. They are equivalent to the standard MATLAB routines PERMS and 
+  NCHOOSEK but much faster. 
+  <LI>The routine <A 
+  href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/txt/zerotrim.txt">sprintsi 
+  </A>prints a value with the correct standard SI multiplier (e.g. 2100 prints 
+  as 2.1 k). </LI></UL></BODY></HTML>
